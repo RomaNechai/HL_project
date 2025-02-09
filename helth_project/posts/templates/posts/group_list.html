@@ -1,0 +1,28 @@
+{% extends 'layout/base.html' %}
+{% block title %}Запись сообщества {{ group }}{% endblock %}
+{% block content %}
+  <div class="container py-5">
+    {% block head%}
+    <h1>Группа: {{ group.title }}</h1>
+    <p>
+      {{ group.description }}
+    </p>
+    {% endblock %}
+    <article>
+      {% for post in posts %}
+        <ul>
+          <li>
+            Автор: {{ post.author.username }}
+          </li>
+          <li>
+            Дата публикации: {{ post.pub_date|date:"d E Y" }}
+          </li>
+        </ul>
+        <p>{{ post.text }}</p>
+        <p><a href="{% url 'posts:post_detail' post.pk %}">подробнее о посте</a></p>
+        {% if not forloop.last %}<hr>{% endif %}
+      {% endfor %}
+      {% include 'includes/paginator.html' %}
+    </article>
+  </div>
+{% endblock %}

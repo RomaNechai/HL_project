@@ -1,0 +1,25 @@
+{% extends 'layout/base.html' %}
+{% block title %}Удаление поста{% endblock %}
+{% block content%}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5 p-5">
+      <div class="card">
+        <div class="card-header">
+          Удаление поста "{{ post }}"
+        </div>
+        <div class="card-body">
+          <form method="post">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit" class="btn btn-primary">Удалить пост</button>
+          </form>
+          <div>
+            <a href="{% url 'posts:post_detail' post.pk %}">Вернуться к посту</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
