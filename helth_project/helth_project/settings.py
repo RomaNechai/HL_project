@@ -105,8 +105,6 @@ LOGIN_URL = 'users:login'
 
 LOGIN_REDIRECT_URL = 'posts:index_list'
 
-# LOGOUT_REDIRECT_URL = 'posts:index'
-
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 
 EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
