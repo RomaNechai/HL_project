@@ -21,6 +21,7 @@ INTERNAL_IPS = [
 ]
 
 INSTALLED_APPS = [
+    'api.apps.ApiConfig',
     'core.apps.CoreConfig',
     'about.apps.AboutConfig',
     'users.apps.UsersConfig',
@@ -32,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
