@@ -63,7 +63,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     template_name = 'posts/post_create.html'
 
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     template_name = 'posts/post_create.html'
     form_class = PostForm
@@ -74,7 +74,7 @@ class PostUpdateView(UpdateView):
         return context
 
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'posts/post_delete.html'
     success_url = '/'
